@@ -1,6 +1,6 @@
 Package.describe({
   summary: "Wechat account login for meteor",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "git": "https://github.com/leonzhang1109/meteor-accounts-wechat",
   "name": "leonzhang1109:accounts-wechat"
 });
