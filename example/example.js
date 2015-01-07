@@ -22,7 +22,7 @@ if (Meteor.isServer) {
 
     Accounts.loginServiceConfiguration.insert({
       service: 'wechat',
-      clientId: 'CLIENT_ID',
+      appId: 'APP_ID',
       secret: 'SECRET'
     });
   });
