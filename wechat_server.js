@@ -30,7 +30,6 @@ var getTokenResponse = function (query) {
         params: {
           code: query.code,
           appid: config.appId,
-          redirect_uri: OAuth._redirectUri("wechat", config),
           secret: OAuth.openSecret(config.secret),
           grant_type: 'authorization_code'
         }
