@@ -26,7 +26,7 @@ var getTokenResponse = function (query) {
   var response;
   try {
     response = HTTP.post(
-      "https://api.wechat.com/cgi-bin/token", {
+      "https://api.weixin.qq.com/sns/oauth2/access_token", {
         params: {
           code: query.code,
           appid: config.appId,
