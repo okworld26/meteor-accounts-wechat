@@ -14,11 +14,11 @@ Wechat.requestCredential = function (options, credentialRequestCompleteCallback)
   }
   var credentialToken = Random.secret();
   var loginStyle = OAuth._loginStyle('wechat', config, options);
-  var scope = (options && options.requestPermissions) || ['basic', 'likes', 'relationships', 'comments'];
+  var scope = (options && options.requestPermissions) || ['snsapi_login'];
   var flatScope = _.map(scope, encodeURIComponent).join('+');
 
   var loginUrl =
-    'https://open.weixin.qq.com/connect/oauth2/authorize' +
+    'https://open.weixin.qq.com/connect/qrconnect' +
       '?appid=' + config.appId +
       '&response_type=code' +
       '&scope=' + flatScope +
