@@ -1,6 +1,6 @@
 Wechat = {};
 
-Oauth.registerService('wechat', 2, null, function(query) {
+OAuth.registerService('wechat', 2, null, function(query) {
 
   var response = getTokenResponse(query);
   var accessToken = response.access_token;
@@ -50,5 +50,5 @@ var getTokenResponse = function (query) {
 };
 
 Wechat.retrieveCredential = function(credentialToken, credentialSecret) {
-  return Oauth.retrieveCredential(credentialToken, credentialSecret);
+  return OAuth.retrieveCredential(credentialToken, credentialSecret);
 };
