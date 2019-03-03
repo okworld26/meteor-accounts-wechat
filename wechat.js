@@ -1,7 +1,7 @@
-Accounts.oauth.registerService('wechat');
+Accounts.oauth.registerService('wechatWeb');
 
 if (Meteor.isClient) {
-  Meteor.loginWithWechat = function(options, callback) {
+  Meteor.loginWithWechatWeb = function(options, callback) {
     // support a callback without options
     if (! callback && typeof options === "function") {
       callback = options;
@@ -9,15 +9,15 @@ if (Meteor.isClient) {
     }
 
     var credentialRequestCompleteCallback = Accounts.oauth.credentialRequestCompleteHandler(callback);
-    Wechat.requestCredential(options, credentialRequestCompleteCallback);
+    WechatWeb.requestCredential(options, credentialRequestCompleteCallback);
   };
 } else {
   Accounts.addAutopublishFields({
-    forLoggedInUser: ['services.wechat'],
+    forLoggedInUser: ['services.wechatWeb'],
     forOtherUsers: [
-      'services.wechat.username',
-      'services.wechat.full_name',
-      'services.wechat.profile_picture'
+      'services.wechatWeb.username',
+      'services.wechatWeb.full_name',
+      'services.wechatWeb.profile_picture'
     ]
   });
 }

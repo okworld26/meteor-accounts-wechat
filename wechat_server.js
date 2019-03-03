@@ -1,6 +1,6 @@
-Wechat = {};
+WechatWeb = {};
 
-OAuth.registerService('wechat', 2, null, function(query) {
+OAuth.registerService('wechatWeb', 2, null, function(query) {
 
   var response = getTokenResponse(query);
   var accessToken = response.access_token;
@@ -12,13 +12,13 @@ OAuth.registerService('wechat', 2, null, function(query) {
     serviceData: serviceData,
     options: {
       profile: { name: identity.full_name },
-      services: { wechat: identity }
+      services: { wechatWeb: identity }
     }
   };
 });
 
 var getTokenResponse = function (query) {
-  var config = ServiceConfiguration.configurations.findOne({service: 'wechat'});
+  var config = ServiceConfiguration.configurations.findOne({service: 'wechatWeb'});
 
   if (!config)
     throw new ServiceConfiguration.ConfigError();
@@ -42,13 +42,13 @@ var getTokenResponse = function (query) {
     if (response.content.error)
         throw response.content;
   } catch (err) {
-    throw _.extend(new Error("Failed to complete OAuth handshake with Wechat. " + err.message),
+    throw _.extend(new Error("Failed to complete OAuth handshake with WechatWeb. " + err.message),
                    {response: err.response});
   }
 
   return response.content;
 };
 
-Wechat.retrieveCredential = function(credentialToken, credentialSecret) {
+WechatWeb.retrieveCredential = function(credentialToken, credentialSecret) {
   return OAuth.retrieveCredential(credentialToken, credentialSecret);
 };

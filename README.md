@@ -1,5 +1,5 @@
-# Meteor Acccounts Wechat
-#### Wechat account login for meteor
+# Meteor Acccounts WechatWeb
+#### WechatWeb account login for meteor
 
 ##Install
 
@@ -40,7 +40,7 @@ and also add following package as pre-req -
 5. Now, all things are setup, you are ready to use this package
 6. Add following button code for login
 ```
-      Meteor.loginWithWechat(function (err, res) {
+      Meteor.loginWithWechatWeb(function (err, res) {
           if (err !== undefined)
             console.log('sucess ' + res)
           else

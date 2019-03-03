@@ -1,7 +1,7 @@
 Package.describe({
-  summary: "Wechat account login for meteor",
+  summary: "WechatWeb account login for meteor",
   "version": "0.2.6",
-  "git": "https://github.com/leonzhang1109/meteor-accounts-wechat",
+  "git": "https://github.com/okworld26/meteor-accounts-wechat",
   "name": "leonzhang1109:accounts-wechat"
 });
 
@@ -24,7 +24,7 @@ Package.on_use(function(api) {
   api.add_files('wechat_server.js', 'server');
   api.add_files("wechat.js");
 
-  api.export('Wechat');
+  api.export('WechatWeb');
 
   api.add_files([
     'wechat_configuration.html',
